@@ -1,323 +1,37 @@
-<!DOCTYPE html>
-<html amp>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <style amp-boilerplate>
-            body {
-                -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-                -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-                -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-                animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            }
-            @-webkit-keyframes -amp-start {
-                from {
-                    visibility: hidden;
-                }
-                to {
-                    visibility: visible;
-                }
-            }
-            @-moz-keyframes -amp-start {
-                from {
-                    visibility: hidden;
-                }
-                to {
-                    visibility: visible;
-                }
-            }
-            @-ms-keyframes -amp-start {
-                from {
-                    visibility: hidden;
-                }
-                to {
-                    visibility: visible;
-                }
-            }
-            @-o-keyframes -amp-start {
-                from {
-                    visibility: hidden;
-                }
-                to {
-                    visibility: visible;
-                }
-            }
-            @keyframes -amp-start {
-                from {
-                    visibility: hidden;
-                }
-                to {
-                    visibility: visible;
-                }
-            }
-        </style>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,minimum-scale=1" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css" />
-        <style amp-custom>
-            #branch-sdk {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-            body {
-                margin: 0;
-                word-wrap: break-word;
-                font-family: "Open Sans", Helvetica, serif;
-            } /*============Portrait============*/
-            .main-image {
-                width: 100%;
-                height: auto;
-                max-width: 100%; /* Añadido para hacer la imagen responsive */
-                background-image: url(https://i.imgur.com/cuzVupP.jpg);
-                background-size: cover;
-                background-position: top center;
-            }
-            #content-container {
-                box-sizing: border-box;
-                padding: 24px;
-                margin: 0 24px;
-                background-color: #fff;
-            }
-            .app-title {
-                font-size: 14px;
-                padding-bottom: 11px;
-                text-transform: uppercase;
-            }
-            .card-title {
-                font-size: 33px;
-                line-height: 36px;
-            }
-            .app-content {
-                padding-top: 10px;
-                padding-bottom: 100px;
-                font-size: 20px;
-            }
-            .input-wrapper {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 110px;
-                background-color: #fff;
-                box-shadow: 0px -20px 20px -8px rgba(255, 255, 255, 1);
-            }
-            .input-container {
-                width: 100%;
-                padding: 0 24px;
-                text-align: center;
-                box-sizing: border-box;
-            }
-            .form-get-the-app {
-                display: -webkit-box;
-                display: flex;
-                text-align: center;
-                padding-top: 10px;
-                border-top: 2px solid #cecece;
-                min-height: 300px;
-            }
-            .input-label {
-                padding: 4px 10px;
-                font-size: 13px;
-                overflow: hidden;
-                word-wrap: break-word;
-                text-align: center;
-            }
-            .app-icon {
-                width: 62px;
-                height: 62px;
-                line-height: 62px;
-                background-size: 100% auto;
-            }
-            .cta-button {
-                -webkit-box-flex: 1;
-                flex-grow: 1;
-                height: 62px;
-                line-height: 62px;
-                background-color: #444;
-                border-radius: 2px;
-                font-size: 20px;
-                padding: 0 20px;
-                margin-left: 10px;
-                color: #fff;
-                text-align: center;
-                text-decoration: none;
-                display: block;
-            } /* No data (portrait) */
-            @media only screen and (orientation: portrait) {
-                .card--no-data .main-image {
-                    background-image: url("http://s3-us-west-1.amazonaws.com/branch-assets/b_stripes-small.png");
-                    background-size: auto;
-                    background-position: top center;
-                    background-repeat: repeat;
-                    height: 190px;
-                }
-                .card--no-data > .app-icon {
-                    position: absolute;
-                    top: 160px;
-                    left: 34px;
-                }
-                .card--no-data #content-container {
-                    margin-top: 20px;
-                }
-            }
-            @media screen /* >=iPhone 5 */ and (min-device-width: 321px) {
-                .input-label {
-                    font-size: 14px;
-                }
-            }
-            @media only screen /* >=iPhone 6 */ and (min-device-width: 375px) and (orientation: portrait) {
-                .main-image {
-                    height: 300px;
-                    height: 80vw;
-                }
-                .app-content {
-                    padding-bottom: 120px;
-                }
-                .input-wrapper {
-                    height: 115px;
-                }
-            }
-            @media only screen /* >=iPhone 6+ */ and (min-device-width: 414px) and (orientation: portrait) {
-                .main-image {
-                    height: 390px;
-                    height: 95vw;
-                }
-            } /*============Landscape============*/
-            @media only screen and (orientation: landscape) {
-                .main-image {
-                    position: fixed;
-                    height: 100%;
-                    height: 100vh;
-                    width: 50%;
-                }
-                .input-wrapper {
-                    right: 0;
-                    left: auto;
-                    width: 50%;
-                }
-                #content-container {
-                    float: left;
-                    width: 50%;
-                    margin-left: 50%;
-                }
-                .input-wrapper {
-                    height: 108px;
-                }
-                .app-content {
-                    padding-bottom: 110px;
-                }
-                .form-get-the-app {
-                    padding-top: 8px;
-                }
-                .input-container {
-                    left: 50%;
-                }
-                .cta-button {
-                    height: 44px;
-                    line-height: 44px;
-                    padding: 0 5px;
-                    margin-left: 50px;
-                }
-                .app-icon {
-                    width: 44px;
-                    height: 44px;
-                } /* No data (landscape) */
-                .card--no-data .main-image {
-                    height: 100%;
-                }
-                .card--no-data > .app-icon {
-                    display: none;
-                }
-                .card--no-data #content-container {
-                    margin-top: 0;
-                }
-            }
-            @media only screen /* >=iPhone 6 */ and (min-device-width: 645px) and (orientation: landscape) {
-                .form-get-the-app {
-                    padding-top: 8px;
-                }
-                .cta-button {
-                    height: 62px;
-                    line-height: 62px;
-                    padding: 0 20px;
-                    margin-left: 70px;
-                }
-                .app-icon {
-                    width: 62px;
-                    height: 62px;
-                    top: -2px;
-                }
-            } /* Reusables */
-            .text-bold {
-                font-weight: 700;
-            }
-            .text-light {
-                font-weight: 300;
-            }
-            .cta-button--no-app-icon {
-                margin-left: 0;
-            }
-        </style>
-        <link rel="apple-touch-icon" href="https://i.imgur.com/cuzVupP.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:image" content="https://i.imgur.com/cuzVupP.jpg" />
-        <meta name="twitter:image:src" content="https://i.imgur.com/cuzVupP.jpg" />
-        <title>VIDEO FULL.MP4</title>
-        <meta property="og:title" content="VIDEO FULL.MP4" />
-        <meta name="twitter:title" content="VIDEO FULL.MP4" />
-        <meta property="og:description" content="VIDEO FULL.MP4" />
-        <meta name="twitter:description" content="VIDEO FULL.MP4" />
-        <meta name="twitter:app:country" content="US" />
-        <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <script async src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js" custom-element="amp-iframe"></script>
-        <script async src="https://cdn.ampproject.org/v0/amp-list-0.1.js" custom-element="amp-list"></script>
-        <script async src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" custom-template="amp-mustache"></script>
-        <link rel="canonical" href="https://video25as.app.link/oOzfiVZYAEb" />
-        <meta http-equiv="cache-control" content="no-cache" />
-        <img src="//whos.amung.us/pingjs/?k=junior13&amp;t=los menores&amp;x=https://www.twitter.com" style="display: none;" />
-    </head>
-    <body>
-        <noscript>
-            <style amp-boilerplate>
-                body {
-                    -webkit-animation: none;
-                    -moz-animation: none;
-                    -ms-animation: none;
-                    animation: none;
-                }
-            </style>
-        </noscript>
-        <div class="card center">
-            <a href="https://www.toprevenuegate.com/amtvvyhd?key=7e8d3f9af99ccac4ca738e29bbda6045"> <div class="main-image"></div></a>
-            <div id="content-container">
-                <div class="app-title text-bold"></div>
-                <div class="card-title text-light">VIDEO FULL.MP4</div>
-                <div class="app-content text-light">VIDEO FULL.MP4</div>
-            </div>
-            <div class="input-wrapper">
-                <div class="input-container">
-                    <div class="input-label text-light">See this content immediately after install</div>
-                    <amp-list src="https://video25as.app.link/oOzfiVZYAEb?__branch_amp_json=1" layout="flex-item">
-                        <template type="amp-mustache" id="cta-template">
-                            <a href="https://www.toprevenuegate.com/amtvvyhd?key=7e8d3f9af99ccac4ca738e29bbda6045" class="cta-button text-light cta-button--no-app-icon"> Reproducir Video </a>
-                            <amp-iframe
-                                id="branch-sdk"
-                                src="/amp-iframe-redirect?scheme_redirect=%7B%7Bscheme_redirect%7D%7D&amp;redirect_strategy=%7B%7Bredirect_strategy%7D%7D&amp;app_id=1251263555974484550&amp;has_app=false"
-                                sandbox="allow-scripts allow-top-navigation"
-                                height="11"
-                                layout="fixed-height"
-                                frameborder="0"
-                            >
-                            </amp-iframe>
-                        </template>
-                    </amp-list>
-                    <a href="https://www.toprevenuegate.com/amtvvyhd?key=7e8d3f9af99ccac4ca738e29bbda6045" class="cta-button text-light cta-button--no-app-icon"> Reproducir Video </a>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            var fb_list = ["video25as.app.link", "video25as-alternate.app.link", "https://t.co/WMcAZkpW3f", "https://t.co/WMcAZkpW3f", "https://t.co/WMcAZkpW3f"];
-        </script>
-    </body>
-</html>
+<!DOCTYPE html><head><script async src="https://platform.twitter.com/oct.js"></script><noscript><img height="1" width="1" style="display:none;" src="https://www.facebook.com/tr?id=1711912442390284&amp;ev=PageView&amp;noscript=1"><img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=288220&amp;fmt=gif"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P8FXJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type="text/javascript">window.env = 'production';
+window.beta = false;
+window.demo = false;
+window.csrfToken = 'b9a4rrnI-XVT4XtIScYDB9nvlWppxgGxGqsI';
+window.isMobile = false;
+window.release = '3e5580ce28';
+</script><link rel="icon" type="image/png" href="https://st.toneden.io/prod-assets/images/favicon.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="google-site-verification" content="Y1nGJMynu6I5F2vZ7ny0nrEhHolm_9ELinFyTS9INuY"><meta property="fb:app_id" content="536426523079089"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="cache-control" content="no-cache, must-revalidate, max-age=0"><meta property="og:url" content="https://biglink.to/sp7e?fbclid=IwAR3beJ6wp15xWNF6zOS6ippxw4_3f6zWtJi1dghsb0dUG98b6S0a-2yvzrY"><script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous" data-auto-replace-svg="nest"></script><meta property="og:image" content="https://ar.toneden.io/68994063/d1f22afc-c6a5-401f-816d-3a4ec2560cc8"><meta property="og:site_name" content="ToneDen"><meta property="og:title" content="𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥"><meta property="og:type" content="article"><meta property="og:description" content="𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥"><meta property="og:url" content="https://biglink.to/sp7e?fbclid=IwAR3beJ6wp15xWNF6zOS6ippxw4_3f6zWtJi1dghsb0dUG98b6S0a-2yvzrY"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥"><meta name="twitter:description" content="𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥"><meta name="twitter:imageSrc" content="https://ar.toneden.io/68994063/d1f22afc-c6a5-401f-816d-3a4ec2560cc8"><meta name="twitter:url" content="https://biglink.to/sp7e?fbclid=IwAR3beJ6wp15xWNF6zOS6ippxw4_3f6zWtJi1dghsb0dUG98b6S0a-2yvzrY"><script>window.EBFONT_PROPERTIES = {
+    'family': 'Neue Plak',
+    'src': 'https://cdn.evbstatic.com/s3-build/perm_001/bf1c05/django/js/src/eb/fonts/neueplak.js',
+    'oldVersions': ['EB.fonts.neueplak.10-24-2018', 'EB.fonts.neueplak.09-20-2018', 'EB.fonts.neueplak.09-04-2018', 'EB.fonts.neueplak.08-30-2018', 'EB.fonts.neueplak.08-24-2018', 'EB.fonts.benton.10-26-2016', 'EB.fonts.benton.11-29-2016'],
+    'version': 'EB.fonts.neueplak.03-19-2019',
+};
+
+/* eslint-disable */
+!function(a,b){if(a.EB=a.EB||{},EB.renderFonts=function(a,c){for(var d="",e=b.createElement("style"),f=0,g;g=a[f];f++)d+="@font-face{font-family:'"+c+"';font-weight:"+g.weight+";font-style:"+g.style+";src:url(data:application/font-woff;base64,"+g.base64+") format('woff');}";e.styleSheet&&!e.sheet?e.styleSheet.cssText=d:e.appendChild(b.createTextNode(d)),b.getElementsByTagName("head")[0].appendChild(e),b.documentElement.className+=" font-has-loaded"},EB.readWriteFontFromLocalStorage=function(a){for(var c=0;c<a.EBFONT_PROPERTIES.oldVersions.length;c++)localStorage.removeItem(a.EBFONT_PROPERTIES.oldVersions[c]);var d=JSON.parse(localStorage.getItem(a.EBFONT_PROPERTIES.version));if(d)EB.renderFonts(d,a.EBFONT_PROPERTIES.family);else{EB.shouldRenderFonts=!0;var e=b.createElement("script");e.src=a.EBFONT_PROPERTIES.src,b.getElementsByTagName("head")[0].appendChild(e),setTimeout(function(){EB.shouldRenderFonts=!1},3e3)}},a.localStorage)try{localStorage.setItem("localStorage",1),localStorage.removeItem("localStorage"),EB.readWriteFontFromLocalStorage(a)}catch(c){Storage.prototype._setItem=Storage.prototype.setItem,Storage.prototype.setItem=function(){}}}(window,document);</script><title>𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="//st.toneden.io/production/stylesheets/fan-link.css?v=3e5580ce28" rel="stylesheet" type="text/css"><meta name="description" content="𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥"><meta name="keywords" content=","><script>window.preloadLink = {"click_count":94,"past_events":null,"schedule":[],"id":2704299,"active_job_id":null,"author":"","call_to_action":"REPRODUCIR VIDEO","button_color":"#fa0909","bg_color":null,"clickthrough_count":71,"emails_sent":null,"custom_domain":"biglink.to","date":null,"description":null,"display_content":null,"location":null,"price":null,"image_url":"https://cdn.glitch.global/0f4c0bdd-de47-4fe6-accf-136f77763f85/37215b4e-9be7-42ed-9580-asdas.png?v=1701109920118","bg_url":null,"is_hidden":false,"is_active":true,"message_settings":null,"isrc":null,"upc":null,"metadata_description":"","metadata_image_url":"https://ar.toneden.io/68994063/d1f22afc-c6a5-401f-816d-3a4ec2560cc8","metadata_title":"𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥","meta_tags":[],"preview_url":null,"autoplay_preview":false,"rsvp_attachment_id":null,"mock_insights":false,"sort_services_by_clickthroughs":false,"affiliate_codes":null,"pixels":[{"platform":"facebook"},{"platform":"google"},{"platform":"google-analytics"},{"platform":"twitter"},{"platform":"snapchat"},{"platform":"tiktok"}],"rules":[],"services":[],"shortened_path":"sp7e","show_socials":null,"skip_landing_page":false,"social_settings":[],"subdomain":null,"target_type":"event","target_url":"https://cockysnailleather.com/c88yqmtb0?key=9b0b68faa8643ad46a448884d63d2f04","title":"𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥","header":"𝐕𝐢𝐝𝐞𝐨 𝐌𝐩𝟒 🎥","use_saved_service":false,"user_id":68994063,"createdAt":"2023-11-27T09:01:45.300Z","updatedAt":"2023-11-27T18:05:04.640Z","rsvp_attachment":null};
+window.preloadCustomDomain = {"id":42591,"domain":"biglink.to","root_redirect_url":null,"user_id":51613072,"is_verified":false,"pixel_id":null,"skip_domain_in_growth_campaign":null,"favicon_url":null,"logo_url":null,"logo_href":null,"logo_text":null,"createdAt":"2021-08-31T21:45:55.562Z","updatedAt":"2021-08-31T21:45:55.562Z"};
+window.rsvp = null;
+window.isOwnerPremium = false;
+window.TDAppName = 'fan-link';
+window.userID = '';
+window.viewAsOwner = false;
+window.appleMusicDeveloperToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlQMlhWSjc1UFgifQ.eyJpYXQiOjE3MDA2OTc2MzMsImV4cCI6MTcxNjI0OTYzMywiaXNzIjoiNDdGNjNQSEc3UCJ9.rkr7g-z-iKa9zBTNjGpYW7xIVcQarG33LAKRkP5nBW4cLXirA_Deer31VHgpuvQzqmjZqpFUjutsNkyGzXI2bA";
+window.skipPixelTracking = false;
+window.eventbriteEvent = null;
+</script><script>//- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//- })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+//- ga('create', 'UA-43862399-4', 'auto');
+//- ga('send', 'pageview');
+</script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+</script><script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous" data-auto-replace-svg="nest"></script><script>window.userLocation = {"range":[2489652992,2489653247],"country":"DO","region":"32","eu":"0","timezone":"America/Santo_Domingo","city":"Santo Domingo Este","ll":[18.4842,-69.8466],"metro":0,"area":5};</script></head><body class="theme-toneden"><script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script><div id="app-component"></div><script src="//st.toneden.io/production/javascripts/fan-link.js?v=3e5580ce28" crossorigin="anonymous"></script></body><script src="//sd.toneden.io/production/v2/toneden.loader.js" async></script>
